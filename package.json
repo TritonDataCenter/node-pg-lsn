@@ -1,4 +1,5 @@
 {
+	"main": "./lib/index.js",
 	"name": "xlog",
 	"description": "PostgreSQL XLOG location comparison library",
 	"version": "1.0.0",
