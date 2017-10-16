@@ -8,20 +8,20 @@
  * Copyright (c) 2017, Joyent, Inc.
  */
 
-var xlog = require('../lib/index');
+var lsn = require('../lib/index');
 var verror = require('verror');
 var test = require('tape').test;
 
 test('invalid inputs (not xlog locations)', function (t) {
 	t.throws(function () {
-		xlog.xlogCompare('1', '2');
+		lsn.xlogCompare('1', '2');
 	/* JSSTYLED */
 	}, /cannot compare "1" to "2"/);
 	t.end();
 });
 
 test('compare OK', function (t) {
-	var res = xlog.xlogCompare('2D7/0', '2D6/FEFFE770');
+	var res = lsn.xlogCompare('2D7/0', '2D6/FEFFE770');
 
 	t.equal(res, 1);
 	t.end();

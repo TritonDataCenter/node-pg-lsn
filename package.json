@@ -1,7 +1,7 @@
 {
 	"main": "./lib/index.js",
-	"name": "xlog",
-	"description": "PostgreSQL XLOG location comparison library",
+	"name": "pg-lsn",
+	"description": "PostgreSQL LSN comparison library",
 	"version": "1.0.0",
 	"dependencies": {
 		"extsprintf": "1.2.0",

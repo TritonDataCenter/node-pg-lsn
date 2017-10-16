@@ -8,7 +8,7 @@
     Copyright (c) 2017, Joyent, Inc.
 -->
 
-# node-xlog
+# node-pg-lsn
 
 Constants and functions for working with postgres xlog positions.  This module
 makes a number of assumptions about the format of xlog positions.  It's not
@@ -30,11 +30,11 @@ difference between two positions.
 ## Usage
 
     var assert = require('assert');
-    var xlog = require('xlog');
+    var lsn = require('pg-lsn');
 
     var locationOne = '2D7/0';
     var locationTwo = '2D6/FEFFE770';
-    var comparison = xlog.xlogCompare(locationOne, locationTwo);
+    var comparison = lsn.xlogCompare(locationOne, locationTwo);
 
     if (comparison === 0) {
         console.log('locations are the same');
