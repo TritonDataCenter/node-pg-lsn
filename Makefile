@@ -15,6 +15,7 @@ TAPE :=			./node_modules/.bin/tape
 NPM  :=			npm
 
 include ./tools/mk/Makefile.defs
+include ./tools/mk/Makefile.node_modules.defs
 
 #
 # Files
@@ -36,8 +37,9 @@ all:
 	$(NPM) install
 
 .PHONY: test
-test:
+test: $(STAMP_NODE_MODULES)
 	$(NODE) $(TAPE) test/*.test.js
 
 include ./tools/mk/Makefile.deps
+include ./tools/mk/Makefile.node_modules.targ
 include ./tools/mk/Makefile.targ
